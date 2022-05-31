@@ -1,0 +1,43 @@
+*{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+.accordeon {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    border: 2px solid red;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+
+    font-size: 23px;
+    font-style: italic;
+    max-width: 1000px;
+    margin: 5px auto;
+}
+
+.text {
+    border: 2px solid goldenrod;
+    border-radius: 10px;
+    background-color: greenyellow;
+    opacity: 0.5;
+
+    width: 1000px;
+    text-align: center;
+    margin: auto;
+    padding: 5px;
+
+    display: none;
+}
+
+.title:hover {
+    background-color: rgb(255, 214, 214);
+    cursor: pointer;
+}
+.text.active {
+    display: block;
+}
