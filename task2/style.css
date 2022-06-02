@@ -32,6 +32,9 @@
     padding: 5px;
 
     display: none;
+
+    transition: 0.3s ease-in-out;
+
 }
 
 .title:hover {
@@ -40,4 +43,6 @@
 }
 .text.active {
     display: block;
+    transition: 1s;
+
 }
