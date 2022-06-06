@@ -8,7 +8,6 @@ console.log(newToDo);
 
 input.addEventListener('keydown', function enter(event) {
     if (event.keyCode === 13){
-        document.createElement('div').classList.add('newToDo')
-        newToDo.innerHTML = input.value
+        document.body.appendChild(document.createElement('div').innerHTML = input.value)
     }
 })
