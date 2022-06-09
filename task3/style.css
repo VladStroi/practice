@@ -2,6 +2,10 @@ body {
     background-color: blanchedalmond;
 }
 
+.check {
+    margin-left: 40%;
+}
+
 .input {
     width: 200px;
     height: 25px;
@@ -13,6 +17,9 @@ body {
 }
 
 .newToDo {
+    display: flex;
+    justify-content: space-between;
+    
     width: 200px;
     height: 25px;
     border-radius: 5px;
@@ -24,3 +31,26 @@ body {
     line-height: 22px;
 
 }
+
+.clean {
+    text-align: center;
+
+    width: 16px;
+    height: 16px;
+
+    color: rgb(199, 0, 0);
+
+    border: 2px solid rgb(199, 0, 0);
+    border-radius: 15px;
+
+    font-size: 12px;
+    line-height: 18px;
+
+} 
+
+.clean:hover {
+    color: rgb(255, 0, 0);
+    border: 2px solid rgb(255, 0, 0);
+    cursor: pointer;
+}
+
