@@ -4,31 +4,38 @@ const check = document.querySelector('.check')
 input.addEventListener('keydown', function enter(event) {
     if (event.keyCode === 13){
         //new div TO DO
-        const newDiv = document.createElement('div');
-        newDiv.classList.add('newToDo');
-        check.appendChild(newDiv);
+        const newToDoDiv = document.createElement('div');
+        newToDoDiv.classList.add('newToDo');
 
-        //new value input add in TO DO
-        let newToDo = document.querySelectorAll('.newToDo');
-        let newText = document.createTextNode(input.value);
+        //add div for TO DO
+        check.appendChild(newToDoDiv);
+        
+        //new div for text TO DO
+        let newTextDiv = document.createElement('div')
+        newTextDiv.classList.add('textDiv');
         
         //new checkbox
         let checkbox = document.createElement('input')
         checkbox.type = 'checkbox';
-        checkbox.classList.add('check')
-
-        //add value input
-        newToDo[newToDo.length - 1].appendChild(checkbox);
-        newDiv.appendChild(newText);
-
-        //add clean button
+        checkbox.classList.add('checkbox')
+        
+        //new clean button
         let addCleanButton = document.createElement('div');
         addCleanButton.classList.add('clean');
         let cleanX = document.createTextNode('×')
         addCleanButton.appendChild(cleanX)
+        
+        let newToDo = document.querySelectorAll('.newToDo');
+        
+        //add checkbox, div for text TO DO with value input and clean button
+        newToDo[newToDo.length - 1].appendChild(checkbox);
+
+        newToDoDiv.appendChild(newTextDiv);
+
+        let newText = document.createTextNode(input.value);
+        newTextDiv.appendChild(newText)
+
         newToDo[newToDo.length - 1].appendChild(addCleanButton);
-        
-        
 
         //clean value input
         input.value = '';
@@ -36,7 +43,10 @@ input.addEventListener('keydown', function enter(event) {
 })
 
 function deleted(e) {
-    if (e.target.className === 'check');
+    if (e.target.className === 'checkbox'){
+        e.target.style.display = "none";
+        e.target.nextSibling.style.textDecoration = 'line-through';
+    };
 }
 
 check.addEventListener('click', deleted)
