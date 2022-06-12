@@ -42,11 +42,19 @@ input.addEventListener('keydown', function enter(event) {
     }
 })
 
-function deleted(e) {
+function done(e) {
     if (e.target.className === 'checkbox'){
         e.target.style.display = "none";
         e.target.nextSibling.style.textDecoration = 'line-through';
     };
 }
 
+function deleted(e) {
+    if (e.target.className === 'clean'){
+        e.target.parentElement.remove()
+        console.log();
+    }
+}
+
+check.addEventListener('click', done)
 check.addEventListener('click', deleted)
