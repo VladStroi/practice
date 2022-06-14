@@ -13,7 +13,9 @@ const addTestDiv = str => {
 const done = e => {
     if (e.target.className === 'checkbox'){
         e.target.style.display = "none";
-        e.target.nextSibling.style.textDecoration = 'line-through';
+        const parent = e.target.parentElement
+        parent.querySelector('.textDiv').style.textDecoration = 'line-through';
+        // e.target.nextSibling.style.textDecoration = 'line-through';
     };
 }
 
