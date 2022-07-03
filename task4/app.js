@@ -9,6 +9,7 @@ const restart = document.querySelector(".restart");
 
 let paused = false;
 let step = 0;
+let value = "X";
 
 const winCombo = [
   [0, 1, 2],
@@ -21,7 +22,7 @@ const winCombo = [
   [2, 4, 6],
 ];
 
-let value = "X";
+// game procesing
 
 game.addEventListener(
   "click",
@@ -37,11 +38,13 @@ game.addEventListener(
         }
         step++;
       }
+      message.innerHTML = `goes ${value}`;
+      checkWinner();
     }
-    message.innerHTML = `goes ${value}`;
-    checkWinner();
   })
 );
+
+// winner or draw check
 
 const checkWinner = () => {
   if (!paused) {
@@ -64,9 +67,19 @@ const checkWinner = () => {
         paused = true;
       }
     }
-    // TODO  i need scrip for draw!
+    if (step == 9) {
+      message.innerHTML = "Draw";
+      drawGame();
+      paused = true;
+    }
   }
 };
+
+const drawGame = () => {
+  draw.innerHTML = Number(draw.innerHTML) + 1;
+};
+
+// restart game button
 
 restart.addEventListener(
   "click",
